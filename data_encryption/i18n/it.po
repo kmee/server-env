@@ -46,7 +46,8 @@ msgstr "Dati criptati"
 #: code:addons/data_encryption/models/encrypted_data.py:0
 #, python-format
 msgid "Encrypted data can only be read with suspended security (sudo)"
-msgstr "I dati criptati possono essere letti slo con la sicrezza sospesa (sudo)"
+msgstr ""
+"I dati criptati possono essere letti slo con la sicrezza sospesa (sudo)"
 
 #. module: data_encryption
 #: model:ir.model.fields,field_description:data_encryption.field_encrypted_data__environment
@@ -57,11 +58,6 @@ msgstr "Ambiente"
 #: model:ir.model.fields,field_description:data_encryption.field_encrypted_data__id
 msgid "ID"
 msgstr "ID"
-
-#. module: data_encryption
-#: model:ir.model.fields,field_description:data_encryption.field_encrypted_data____last_update
-msgid "Last Modified on"
-msgstr "Ultima modifica il"
 
 #. module: data_encryption
 #: model:ir.model.fields,field_description:data_encryption.field_encrypted_data__write_uid
@@ -104,8 +100,8 @@ msgstr ""
 #: code:addons/data_encryption/models/encrypted_data.py:0
 #, python-format
 msgid ""
-"Password has been encrypted with a different key. Unless you can recover the"
-" previous key, this password is unreadable."
+"Password has been encrypted with a different key. Unless you can recover the "
+"previous key, this password is unreadable."
 msgstr ""
 "La password è stata criptata con un'altra chiave. Finché non si recupera la "
 "chiave precedente, la password non è leggibile."
@@ -142,3 +138,6 @@ msgstr ""
 #, python-format
 msgid "You can only encrypt data with suspended security (sudo)"
 msgstr "Si possono criptare i dati solo con la sicurezza sospesa (sudo)"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Ultima modifica il"

@@ -57,11 +57,6 @@ msgid "ID"
 msgstr ""
 
 #. module: data_encryption
-#: model:ir.model.fields,field_description:data_encryption.field_encrypted_data____last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: data_encryption
 #: model:ir.model.fields,field_description:data_encryption.field_encrypted_data__write_uid
 msgid "Last Updated by"
 msgstr ""

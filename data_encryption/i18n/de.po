@@ -59,11 +59,6 @@ msgid "ID"
 msgstr "ID"
 
 #. module: data_encryption
-#: model:ir.model.fields,field_description:data_encryption.field_encrypted_data____last_update
-msgid "Last Modified on"
-msgstr "Zuletzt geändert am"
-
-#. module: data_encryption
 #: model:ir.model.fields,field_description:data_encryption.field_encrypted_data__write_uid
 msgid "Last Updated by"
 msgstr "Zuletzt aktualisiert von"
@@ -134,3 +129,6 @@ msgstr ""
 #, python-format
 msgid "You can only encrypt data with suspended security (sudo)"
 msgstr ""
+
+#~ msgid "Last Modified on"
+#~ msgstr "Zuletzt geändert am"
