@@ -10,9 +10,9 @@ Server Environment Data Encryption
    !! source digest: sha256:8b7167f4311edd86055de2f0601f9348263e6b72366abeb835d57f71491b6e33
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-.. |badge1| image:: https://img.shields.io/badge/maturity-Alpha-red.png
+.. |badge1| image:: https://img.shields.io/badge/maturity-Production%2FStable-green.png
     :target: https://odoo-community.org/page/development-status
-    :alt: Alpha
+    :alt: Production/Stable
 .. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
@@ -33,11 +33,6 @@ When Odoo does not find the value of the field in the configuration
 file, it will fallback on a Odoo encrypted field instead. Also it allows
 you to configure the environment dependent fields for all your
 environments from the production server.
-
-.. IMPORTANT::
-   This is an alpha version, the data model and design can change at any time without warning.
-   Only for development or testing purpose, do not use in production.
-   `More details on development status <https://odoo-community.org/page/development-status>`_
 
 **Table of contents**
 
@@ -114,6 +109,14 @@ This module is maintained by the OCA.
 OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
+
+.. |maintainer-florian-dacosta| image:: https://github.com/florian-dacosta.png?size=40px
+    :target: https://github.com/florian-dacosta
+    :alt: florian-dacosta
+
+Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+
+|maintainer-florian-dacosta| 
 
 This module is part of the `OCA/server-env <https://github.com/OCA/server-env/tree/18.0/server_environment_data_encryption>`_ project on GitHub.
 
