@@ -9,11 +9,11 @@
     </header>
     <sheet>
         <div class="d-flex justify-content-between">
-              <div class="alert lead alert-info text-center d-inline">
-                  <strong>Modify values for test environment</strong>
-                </div>
-                <div>
-            <button
+            <div class="alert lead alert-info text-center d-inline">
+                <strong>Modify values for test environment</strong>
+            </div>
+            <div>
+                <button
                     name="action_change_env_data_encrypted_fields"
                     type="object"
                     string="Define values for preprod"
@@ -21,7 +21,7 @@
                     context="{'environment': 'preprod'}"
                 />
 
-            <button
+                <button
                     name="action_change_env_data_encrypted_fields"
                     type="object"
                     string="Define values for prod"
@@ -29,7 +29,8 @@
                     context="{'environment': 'prod'}"
                 />
             </div>
-              </div><group col="4">
+        </div>
+        <group col="4">
             <field name="test" modifiers="{&quot;required&quot;: true}" />
             <field
                 name="test2"
