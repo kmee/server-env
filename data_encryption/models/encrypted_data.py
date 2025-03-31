@@ -6,7 +6,6 @@ from odoo import api, fields, models
 from odoo.exceptions import AccessError, ValidationError
 from odoo.tools import ormcache
 from odoo.tools.config import config
-from odoo.tools.translate import _
 
 _logger = logging.getLogger(__name__)
 
@@ -46,7 +45,7 @@ class EncryptedData(models.Model):
             return cipher.decrypt(self.encrypted_data).decode()
         except InvalidToken as exc:
             raise ValidationError(
-                _(
+                self.env._(
                     "Password has been encrypted with a different "
                     "key. Unless you can recover the previous key, "
                     "this password is unreadable."
@@ -60,7 +59,9 @@ class EncryptedData(models.Model):
             self = self.with_context(bin_size=False)
         if not self.env.su:
             raise AccessError(
-                _("Encrypted data can only be read with suspended security (sudo)")
+                self.env._(
+                    "Encrypted data can only be read with suspended security (sudo)"
+                )
             )
         if not env:
             env = self._retrieve_env()
@@ -79,40 +80,40 @@ class EncryptedData(models.Model):
             return json.loads(data)
         except (ValueError, TypeError) as exc:
             raise ValidationError(
-                _("The data you are trying to read are not in a json format")
+                self.env._("The data you are trying to read are not in a json format")
             ) from exc
 
-    @staticmethod
-    def _retrieve_env():
+    def _retrieve_env(self):
         """Return the current environment
         Raise if none is found
         """
         current = config.get("running_env", False)
         if not current:
             raise ValidationError(
-                _(
+                self.env._(
                     "No environment found, please check your running_env "
                     "entry in your config file."
                 )
             )
         return current
 
-    @classmethod
-    def _get_cipher(cls, env):
+    def _get_cipher(self, env):
         """Return a cipher using the key of environment.
         force_env = name of the env key.
         Useful for encoding against one precise env
         """
-        key_name = "encryption_key_%s" % env
+        key_name = f"encryption_key_{env}"
         key_str = config.get(key_name)
         if not key_str:
             raise ValidationError(
-                _(
+                self.env._(
                     "No '%(key_name)s' entry found in config file. "
-                    "Use a key similar to: %(key)s"
+                    "Use a key similar to: %(key)s",
+                    key_name=key_name,
+                    key=Fernet.generate_key(),
                 )
-                % {"key_name": key_name, "key": Fernet.generate_key()}
             )
+
         # key should be in bytes format
         key = key_str.encode()
         return Fernet(key)
@@ -128,7 +129,7 @@ class EncryptedData(models.Model):
     def _encrypted_store(self, name, data, env=None):
         if not self.env.su:
             raise AccessError(
-                _("You can only encrypt data with suspended security (sudo)")
+                self.env._("You can only encrypt data with suspended security (sudo)")
             )
         if not env:
             env = self._retrieve_env()

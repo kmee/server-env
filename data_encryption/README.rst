@@ -10,20 +10,20 @@ Encryption data
    !! source digest: sha256:944425b96b37d35d105f21f5a507a4b36c390de014d97f62379963d72f3d96ad
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-.. |badge1| image:: https://img.shields.io/badge/maturity-Alpha-red.png
+.. |badge1| image:: https://img.shields.io/badge/maturity-Production%2FStable-green.png
     :target: https://odoo-community.org/page/development-status
-    :alt: Alpha
+    :alt: Production/Stable
 .. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fserver--env-lightgray.png?logo=github
-    :target: https://github.com/OCA/server-env/tree/17.0/data_encryption
+    :target: https://github.com/OCA/server-env/tree/18.0/data_encryption
     :alt: OCA/server-env
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/server-env-17-0/server-env-17-0-data_encryption
+    :target: https://translation.odoo-community.org/projects/server-env-18-0/server-env-18-0-data_encryption
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/server-env&target_branch=17.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/server-env&target_branch=18.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -31,11 +31,6 @@ Encryption data
 This module allows to encrypt and decrypt data. This module is not
 usable by itself, it is a low level module which should work as a base
 for others. An example is the module server_environment_data_encryption
-
-.. IMPORTANT::
-   This is an alpha version, the data model and design can change at any time without warning.
-   Only for development or testing purpose, do not use in production.
-   `More details on development status <https://odoo-community.org/page/development-status>`_
 
 **Table of contents**
 
@@ -87,7 +82,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/server-env/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/server-env/issues/new?body=module:%20data_encryption%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/server-env/issues/new?body=module:%20data_encryption%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -102,8 +97,8 @@ Authors
 Contributors
 ------------
 
--  Raphaël Reverdy <raphael.reverdy@akretion.com>
--  Florian da Costa <florian.dacosta@akretion.com>
+- Raphaël Reverdy <raphael.reverdy@akretion.com>
+- Florian da Costa <florian.dacosta@akretion.com>
 
 Maintainers
 -----------
@@ -118,6 +113,14 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/server-env <https://github.com/OCA/server-env/tree/17.0/data_encryption>`_ project on GitHub.
+.. |maintainer-florian-dacosta| image:: https://github.com/florian-dacosta.png?size=40px
+    :target: https://github.com/florian-dacosta
+    :alt: florian-dacosta
+
+Current `maintainer <https://odoo-community.org/page/maintainer-role>`__:
+
+|maintainer-florian-dacosta| 
+
+This module is part of the `OCA/server-env <https://github.com/OCA/server-env/tree/18.0/data_encryption>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.

@@ -3,8 +3,9 @@
 {
     "name": "Encryption data",
     "summary": "Store accounts and credentials encrypted by environment",
-    "version": "17.0.1.0.0",
-    "development_status": "Alpha",
+    "version": "18.0.1.0.0",
+    "development_status": "Production/Stable",
+    "maintainers": ["florian-dacosta"],
     "category": "Tools",
     "website": "https://github.com/OCA/server-env",
     "author": "Akretion, Odoo Community Association (OCA)",
