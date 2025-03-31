@@ -35,7 +35,7 @@ class ServerEnvMixin(models.AbstractModel):
         # is useless, we do fallback directly on serven_environement behavior
         if not self._current_env_encrypted_key_exists():
             return super()._compute_server_env_from_default(field_name, options)
-        encrypted_data_name = "{},{}".format(self._name, self.id)
+        encrypted_data_name = f"{self._name},{self.id}"
         env = self.env.context.get("environment", None)
 
         vals = (
@@ -62,7 +62,7 @@ class ServerEnvMixin(models.AbstractModel):
         env = self.env.context.get("environment", None)
         for record in self:
             if record[is_editable_field]:
-                encrypted_data_name = "{},{}".format(record._name, record.id)
+                encrypted_data_name = f"{record._name},{record.id}"
                 values = encrypted_data_obj._encrypted_read_json(
                     encrypted_data_name, env=env
                 )
@@ -105,9 +105,7 @@ class ServerEnvMixin(models.AbstractModel):
                       <strong>{}</strong>
                     </div>
                   </div>
-            """.format(
-                    "alert-danger", warning_string
-                )
+            """.format("alert-danger", warning_string)
             )
             return elem
 
@@ -120,26 +118,22 @@ class ServerEnvMixin(models.AbstractModel):
                     type="object" string="{}{}"
                     class="btn btn-lg btn-primary ml-2"
                     context="{}"/>
-            """.format(
-                button_string, environment, {"environment": environment}
-            )
-            button_div += "{}".format(button)
+            """.format(button_string, environment, {"environment": environment})
+            button_div += f"{button}"
         button_div += "</div>"
         alert_string = _("Modify values for {} environment").format(current_env)
         alert_type = (
             current_env == config.get("running_env") and "alert-info" or "alert-warning"
         )
         elem = etree.fromstring(
-            """
+            f"""
               <div class="d-flex justify-content-between">
-              <div class="alert lead {} text-center d-inline">
-                  <strong>{}</strong>
+              <div class="alert lead {alert_type} text-center d-inline">
+                  <strong>{alert_string}</strong>
                 </div>
-                {}
+                {button_div}
               </div>
-        """.format(
-                alert_type, alert_string, button_div
-            )
+        """
         )
         return elem
 
@@ -184,7 +178,7 @@ class ServerEnvMixin(models.AbstractModel):
             if current_env != config.get("running_env"):
                 self._set_readonly_form_view(arch)
         else:
-            _logger.error("Missing sheet for form view on object {}".format(self._name))
+            _logger.error(f"Missing sheet for form view on object {self._name}")
         return arch
 
     @api.model
