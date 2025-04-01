@@ -21,6 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[data_encryption](data_encryption/) | 18.0.1.0.0 | [![florian-dacosta](https://github.com/florian-dacosta.png?size=30px)](https://github.com/florian-dacosta) | Store accounts and credentials encrypted by environment
 [mail_environment](mail_environment/) | 18.0.1.0.0 |  | Configure mail servers with server_environment_files
 [server_environment](server_environment/) | 18.0.1.0.1 |  | move some configurations out of the database
 [server_environment_ir_config_parameter](server_environment_ir_config_parameter/) | 18.0.1.0.0 |  | Override System Parameters from server environment file

@@ -1,7 +1,8 @@
 [project]
 name = "odoo-addons-oca-server-env"
-version = "18.0.20241011.0"
+version = "18.0.20250401.0"
 dependencies = [
+    "odoo-addon-data_encryption==18.0.*",
     "odoo-addon-mail_environment==18.0.*",
     "odoo-addon-server_environment==18.0.*",
     "odoo-addon-server_environment_ir_config_parameter==18.0.*",
