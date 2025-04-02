@@ -28,6 +28,10 @@ class ServerEnvMixin(models.AbstractModel):
             )
         return key_exists
 
+    @api.depends_context("environment")
+    def _compute_server_env(self):
+        return super()._compute_server_env()
+
     def _compute_server_env_from_default(self, field_name, options):
         """First return database encrypted value then default value"""
         # in case of bad configuration (no encryption key for current env) the module
@@ -147,6 +151,17 @@ class ServerEnvMixin(models.AbstractModel):
         elem = etree.fromstring(elem_string)
         return elem
 
+    def _set_button_invisible_form_view(self, doc, current_env, all_environments):
+        """
+        Hide button from view when we are in the context of an environment different
+        than the running one.
+        """
+        invisible_condition = (
+            f"""context.get("environment", '{current_env}') != '{current_env}'"""
+        )
+        for button in doc.iter("button"):
+            button.attrib["invisible"] = invisible_condition
+
     def _set_readonly_form_view(self, doc, current_env, all_environments):
         readonly_condition = (
             f"""context.get("environment", '{current_env}') != '{current_env}'"""
@@ -193,10 +208,11 @@ class ServerEnvMixin(models.AbstractModel):
 
         node = arch.xpath("//sheet")
         if node:
+            self._set_button_invisible_form_view(arch, current_env, all_environments)
+            self._set_readonly_form_view(arch, current_env, all_environments)
             node = node[0]
             elem = self._get_extra_environment_info_div(current_env, all_environments)
             node.insert(0, elem)
-            self._set_readonly_form_view(arch, current_env, all_environments)
         else:
             _logger.error(f"Missing sheet for form view on object {self._name}")
         return arch
