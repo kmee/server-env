@@ -1,11 +1,6 @@
 <form string="Test">
     <header>
-        <button
-            string="Reset Confirmation"
-            type="object"
-            name="set_draft"
-            states="done"
-        />
+        <button string="Reset Confirmation" type="object" name="set_draft" />
     </header>
     <sheet>
         <group col="4">

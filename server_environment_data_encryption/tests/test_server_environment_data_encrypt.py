@@ -3,16 +3,43 @@
 from pathlib import Path
 
 from lxml import etree
+from odoo_test_helper import FakeModelLoader
 
 from odoo.addons.data_encryption.tests.common import CommonDataEncrypted
 
 
 class TestServerEnvDataEncrypted(CommonDataEncrypted):
-    def test_view_with_env_update_button(self):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.loader = FakeModelLoader(cls.env, cls.__module__)
+        cls.loader.backup_registry()
+
+        # The fake class is imported here !! After the backup_registry
+        from .models import FakePartner
+
+        cls.loader.update_registry((FakePartner,))
+        cls.set_new_key_env("prod")
+        cls.set_new_key_env("preprod")
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.loader.restore_registry()
+        super().tearDownClass()
+
+    def test_env_dependent_value(self):
+        partner = self.env["res.partner"].create(
+            {"name": "Fake name", "city": "test city"}
+        )
+        self.assertFalse(partner.with_context(environment="prod").city)
+        partner.with_context(environment="prod").write({"city": "prod city"})
+        self.assertEqual(partner.with_context(environment=False).city, "test city")
+        self.assertEqual(partner.with_context(environment="test").city, "test city")
+        self.assertEqual(partner.with_context(environment="prod").city, "prod city")
+
+    def test_view_with_env_update(self):
         self.maxDiff = None
         # common class already set test environment (as default)
-        self.set_new_key_env("prod")
-        self.set_new_key_env("preprod")
         mixin_obj = self.env["server.env.mixin"]
         base_path = Path(__file__).parent / "fixtures" / "base.xml"
         xml_str = base_path.read_text()
@@ -74,4 +101,12 @@ class TestServerEnvDataEncrypted(CommonDataEncrypted):
         test_field = res_xml.find("sheet").findall(".//field[@name='test']")[0]
         self.assertEqual(
             test_field.get("readonly"), "context.get(\"environment\", 'test') != 'test'"
+        )
+
+        # test that buttons are invisible in the context of env different than the
+        # running one.
+        confirm_button = res_xml.find("header").find("button")
+        self.assertEqual(
+            confirm_button.get("invisible"),
+            "context.get(\"environment\", 'test') != 'test'",
         )
