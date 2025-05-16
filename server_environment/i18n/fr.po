@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: server-tools (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-02-27 01:37+0000\n"
-"PO-Revision-Date: 2025-05-16 12:23+0000\n"
+"PO-Revision-Date: 2025-05-16 13:46+0000\n"
 "Last-Translator: Vincent Hatakeyama <vincent+github@hatakeyama.fr>\n"
 "Language-Team: French (http://www.transifex.com/oca/OCA-server-tools-9-0/"
 "language/fr/)\n"
@@ -64,22 +64,23 @@ msgstr "Dernière mise à jour le"
 #: model:ir.model,name:server_environment.model_server_env_mixin
 msgid "Mixin to add server environment in existing models"
 msgstr ""
+"Modèle abstrait pour ajouter la configuration serveur aux modèles existants"
 
 #. module: server_environment
 #: model:ir.model.fields,field_description:server_environment.field_server_env_mixin__server_env_defaults
 msgid "Server Env Defaults"
-msgstr ""
+msgstr "Valeurs par défaut de la configuration serveur"
 
 #. module: server_environment
 #: model:ir.actions.act_window,name:server_environment.server_env_act_show_config
 #: model:ir.ui.menu,name:server_environment.menu_server_show_config
 msgid "Server Environment"
-msgstr "Environnement du serveur"
+msgstr "Configuration serveur"
 
 #. module: server_environment
 #: model:ir.model,name:server_environment.model_server_env_techname_mixin
 msgid "Server environment technical name"
-msgstr "Nom technique pour environnement du serveur"
+msgstr "Nom technique pour la configuration serveur"
 
 #. module: server_environment
 #: model:ir.model.fields,field_description:server_environment.field_server_env_techname_mixin__tech_name
@@ -89,7 +90,7 @@ msgstr "Nom technique"
 #. module: server_environment
 #: model:ir.model.fields,help:server_environment.field_server_env_techname_mixin__tech_name
 msgid "Unique name for technical purposes. Eg: server env keys."
-msgstr ""
+msgstr "Nom technique unique. Par exemple : server env keys."
 
 #. module: server_environment
 #: model:res.groups,name:server_environment.has_server_configuration_access
@@ -124,32 +125,32 @@ msgstr "odoo | csv_internal_sep"
 #. module: server_environment
 #: model:ir.model.fields,field_description:server_environment.field_server_config__odoo_I_data_dir
 msgid "odoo | data_dir"
-msgstr ""
+msgstr "odoo | data_dir"
 
 #. module: server_environment
 #: model:ir.model.fields,field_description:server_environment.field_server_config__odoo_I_db_host
 msgid "odoo | db_host"
-msgstr ""
+msgstr "odoo | db_host"
 
 #. module: server_environment
 #: model:ir.model.fields,field_description:server_environment.field_server_config__odoo_I_db_maxconn
 msgid "odoo | db_maxconn"
-msgstr ""
+msgstr "odoo | db_maxconn"
 
 #. module: server_environment
 #: model:ir.model.fields,field_description:server_environment.field_server_config__odoo_I_db_maxconn_gevent
 msgid "odoo | db_maxconn_gevent"
-msgstr ""
+msgstr "odoo | db_maxconn_gevent"
 
 #. module: server_environment
 #: model:ir.model.fields,field_description:server_environment.field_server_config__odoo_I_db_name
 msgid "odoo | db_name"
-msgstr ""
+msgstr "odoo | db_name"
 
 #. module: server_environment
 #: model:ir.model.fields,field_description:server_environment.field_server_config__odoo_I_db_password
 msgid "odoo | db_password"
-msgstr ""
+msgstr "odoo | db_password"
 
 #. module: server_environment
 #: model:ir.model.fields,field_description:server_environment.field_server_config__odoo_I_db_port
