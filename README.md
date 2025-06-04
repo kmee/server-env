@@ -26,7 +26,7 @@ addon | version | maintainers | summary
 [mail_environment_google_gmail](mail_environment_google_gmail/) | 14.0.1.0.0 | <a href='https://github.com/ivantodorovich'><img src='https://github.com/ivantodorovich.png' width='32' height='32' style='border-radius:50%;' alt='ivantodorovich'/></a> | Configure Gmail mail servers with server_environment_files
 [mail_environment_office365](mail_environment_office365/) | 14.0.1.0.0 |  | Configure Office365 parameters with environment variables via server_environment
 [payment_environment](payment_environment/) | 14.0.1.0.2 | <a href='https://github.com/ivantodorovich'><img src='https://github.com/ivantodorovich.png' width='32' height='32' style='border-radius:50%;' alt='ivantodorovich'/></a> | Configure payment acquirers with server_environment
-[server_environment](server_environment/) | 14.0.2.2.4 |  | move some configurations out of the database
+[server_environment](server_environment/) | 14.0.2.3.0 |  | move some configurations out of the database
 [server_environment_data_encryption](server_environment_data_encryption/) | 14.0.1.0.2 |  | Server Environment Data Encryption
 [server_environment_iap](server_environment_iap/) | 14.0.1.0.0 |  | Configure IAP Account with server_environment_files
 [server_environment_ir_config_parameter](server_environment_ir_config_parameter/) | 14.0.1.1.1 |  | Override System Parameters from server environment file
