@@ -4,7 +4,7 @@ import logging
 
 from lxml import etree
 
-from odoo import api, models
+from odoo import _, api, models
 from odoo.exceptions import ValidationError
 from odoo.tools.config import config
 
@@ -98,7 +98,7 @@ class ServerEnvMixin(models.AbstractModel):
         # display a warning instead as the module has no effect.
         if not self._current_env_encrypted_key_exists():
             button_div = "<div>"
-            warning_string = self.env._(
+            warning_string = _(
                 "The encryption key for current environement is not defined"
             )
             elem = etree.fromstring(
@@ -119,9 +119,7 @@ class ServerEnvMixin(models.AbstractModel):
                 and "alert-info"
                 or "alert-warning"
             )
-            alert_string = self.env._("Modify values for {} environment").format(
-                environment
-            )
+            alert_string = _("Modify values for {} environment").format(environment)
             elem_string += f"""
               <div class="alert lead {alert_type} text-center d-inline"
             invisible="context.get('environment', '{current_env}') != '{environment}'">
@@ -129,7 +127,7 @@ class ServerEnvMixin(models.AbstractModel):
               </div>
             """
         button_div = """<div class="d-flex gap-1 flex-wrap align-items-center">"""
-        button_string = self.env._("Define values for ")
+        button_string = _("Define values for ")
         for environment in all_environments:
             button = """
             <button name="action_change_env_data_encrypted_fields"
@@ -186,7 +184,7 @@ class ServerEnvMixin(models.AbstractModel):
 
         if not current_env:
             raise ValidationError(
-                self.env._(
+                _(
                     "you need to define the running_env entry in your odoo "
                     "configuration file"
                 )
