@@ -22,7 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [data_encryption](data_encryption/) | 16.0.1.0.1 |  | Store accounts and credentials encrypted by environment
-[mail_environment](mail_environment/) | 16.0.1.0.1 |  | Configure mail servers with server_environment_files
+[mail_environment](mail_environment/) | 16.0.1.0.2 |  | Configure mail servers with server_environment_files
 [mail_environment_google_gmail](mail_environment_google_gmail/) | 16.0.1.0.0 | <a href='https://github.com/ivantodorovich'><img src='https://github.com/ivantodorovich.png' width='32' height='32' style='border-radius:50%;' alt='ivantodorovich'/></a> | Configure Gmail mail servers with server_environment_files
 [pos_environment](pos_environment/) | 16.0.1.0.1 | <a href='https://github.com/legalsylvain'><img src='https://github.com/legalsylvain.png' width='32' height='32' style='border-radius:50%;' alt='legalsylvain'/></a> | Custom messages on the bill depending on the environment
 [server_environment](server_environment/) | 16.0.1.1.2 |  | move some configurations out of the database
