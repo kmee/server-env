@@ -12,6 +12,7 @@ class AuthSamlProvider(models.Model):
     idp_metadata = fields.Text(required=False)
     sp_pem_public = fields.Char(required=False)
     sp_pem_private = fields.Char(required=False)
+    entity_id = fields.Char(required=False)
 
     sp_pem_public_path = fields.Char(
         string="sp_pem_public_path env config value",
@@ -29,6 +30,7 @@ class AuthSamlProvider(models.Model):
             "sp_baseurl": {},
             "sp_pem_public_path": {},
             "sp_pem_private_path": {},
+            "entity_id": {},
         }
         auth_saml_fields.update(base_fields)
         return auth_saml_fields

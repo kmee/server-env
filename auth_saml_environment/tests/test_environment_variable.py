@@ -17,7 +17,8 @@ class TestEnvironmentVariables(ServerEnvironmentCase):
             "idp_metadata=foo\n"
             "sp_baseurl=bar\n"
             "sp_pem_public_path=file1.txt\n"
-            "sp_pem_private_path=file2.txt"
+            "sp_pem_private_path=file2.txt\n"
+            "entity_id=myentity"
         )
         with self.set_config_dir(None), self.set_env_variables(env_var):
             parser = server_env._load_config()
@@ -31,5 +32,6 @@ class TestEnvironmentVariables(ServerEnvironmentCase):
                     "sp_baseurl": "bar",
                     "sp_pem_public_path": "file1.txt",
                     "sp_pem_private_path": "file2.txt",
+                    "entity_id": "myentity",
                 },
             )
