@@ -369,7 +369,7 @@ ul.auto-toc {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !! source digest: sha256:796938aa29409152ab5821f0ea98ef74f1b7a6e9a2ee2661fa51fb2d8f71b648
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/server-env/tree/14.0/auth_saml_environment"><img alt="OCA/server-env" src="https://img.shields.io/badge/github-OCA%2Fserver--env-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/server-env-14-0/server-env-14-0-auth_saml_environment"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/server-env&amp;target_branch=14.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/agpl-3.0-standalone.html"><img alt="License: AGPL-3" src="https://img.shields.io/badge/licence-AGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/OCA/server-env/tree/18.0/auth_saml_environment"><img alt="OCA/server-env" src="https://img.shields.io/badge/github-OCA%2Fserver--env-lightgray.png?logo=github" /></a> <a class="reference external image-reference" href="https://translation.odoo-community.org/projects/server-env-18-0/server-env-18-0-auth_saml_environment"><img alt="Translate me on Weblate" src="https://img.shields.io/badge/weblate-Translate%20me-F47D42.png" /></a> <a class="reference external image-reference" href="https://runboat.odoo-community.org/builds?repo=OCA/server-env&amp;target_branch=18.0"><img alt="Try me on Runboat" src="https://img.shields.io/badge/runboat-Try%20me-875A7B.png" /></a></p>
 <p>This module allows to use server env for SAML configuration</p>
 <p><strong>Table of contents</strong></p>
 <div class="contents local topic" id="contents">
@@ -389,30 +389,30 @@ ul.auto-toc {
 </div>
 <div class="section" id="installation">
 <h1><a class="toc-backref" href="#toc-entry-1">Installation</a></h1>
-<p>To install this module, you need to have the following modules installed and
-properly configured: <cite>server_environment module</cite> <cite>auth_saml</cite></p>
+<p>To install this module, you need to have the following modules installed
+and properly configured: server_environment module auth_saml</p>
 </div>
 <div class="section" id="configuration">
 <h1><a class="toc-backref" href="#toc-entry-2">Configuration</a></h1>
 <p>To configure this module, you need to:</p>
-<p>Create a module server_environment_file with a cfg file or set the environment variable
-SERVER_ENV_CONFIG with the following section:</p>
+<p>Create a module server_environment_file with a cfg file or set the
+environment variable SERVER_ENV_CONFIG with the following section:</p>
 <p>[auth_saml_provider.&lt;name&gt;]</p>
-<p>Where &lt;name&gt; is optional and must be equal to the name field you defined in Odoo for the IDP.</p>
+<p>Where &lt;name&gt; is optional and must be equal to the name field you defined
+in Odoo for the IDP.</p>
 <p>Example of configuration</p>
 <p>[auth_saml_provider.my_idp]</p>
-<p>idp_metadata=&lt;…&gt;
-sp_baseurl=https://odoo-community.org
-sp_pem_public_path=/data/cert.pem
-sp_pem_private_path=/data/key.pem</p>
+<p>idp_metadata=&lt;…&gt; sp_baseurl=<a class="reference external" href="https://odoo-community.org">https://odoo-community.org</a>
+sp_pem_public_path=/data/cert.pem sp_pem_private_path=/data/key.pem</p>
 </div>
 <div class="section" id="usage">
 <h1><a class="toc-backref" href="#toc-entry-3">Usage</a></h1>
 <p>Once configured, Odoo will read the Auth SAML Providers values from the
 configuration.</p>
-<p>Note that visibility of login button for SAML is changed and differs from <cite>auth_saml</cite> module,
-instead of relying on which fields are filled or not, all providers will be displayed as long
-as their configuration in Odoo are set to active.</p>
+<p>Note that visibility of login button for SAML is changed and differs
+from auth_saml module, instead of relying on which fields are filled or
+not, all providers will be displayed as long as their configuration in
+Odoo are set to active.</p>
 </div>
 <div class="section" id="known-issues-roadmap">
 <h1><a class="toc-backref" href="#toc-entry-4">Known issues / Roadmap</a></h1>
@@ -426,7 +426,7 @@ runbot.</li>
 <p>Bugs are tracked on <a class="reference external" href="https://github.com/OCA/server-env/issues">GitHub Issues</a>.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-<a class="reference external" href="https://github.com/OCA/server-env/issues/new?body=module:%20auth_saml_environment%0Aversion:%2014.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
+<a class="reference external" href="https://github.com/OCA/server-env/issues/new?body=module:%20auth_saml_environment%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**">feedback</a>.</p>
 <p>Do not contact contributors directly about support or help with technical issues.</p>
 </div>
 <div class="section" id="credits">
@@ -453,7 +453,7 @@ If you spotted it first, help us to smash it by providing a detailed and welcome
 <p>OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.</p>
-<p>This module is part of the <a class="reference external" href="https://github.com/OCA/server-env/tree/14.0/auth_saml_environment">OCA/server-env</a> project on GitHub.</p>
+<p>This module is part of the <a class="reference external" href="https://github.com/OCA/server-env/tree/18.0/auth_saml_environment">OCA/server-env</a> project on GitHub.</p>
 <p>You are welcome to contribute. To learn how please visit <a class="reference external" href="https://odoo-community.org/page/Contribute">https://odoo-community.org/page/Contribute</a>.</p>
 </div>
 </div>
