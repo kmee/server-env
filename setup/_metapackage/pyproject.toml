@@ -1,12 +1,13 @@
 [project]
 name = "odoo-addons-oca-server-env"
-version = "17.0.20250604.0"
+version = "17.0.20260224.0"
 dependencies = [
     "odoo-addon-data_encryption>=17.0dev,<17.1dev",
     "odoo-addon-mail_environment>=17.0dev,<17.1dev",
     "odoo-addon-mail_environment_office365>=17.0dev,<17.1dev",
     "odoo-addon-server_environment>=17.0dev,<17.1dev",
     "odoo-addon-server_environment_autocreate>=17.0dev,<17.1dev",
+    "odoo-addon-server_environment_data_encryption>=17.0dev,<17.1dev",
     "odoo-addon-server_environment_ir_config_parameter>=17.0dev,<17.1dev",
 ]
 classifiers=[
