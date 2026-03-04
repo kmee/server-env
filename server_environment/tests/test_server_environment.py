@@ -82,9 +82,9 @@ class TestEnv(common.ServerEnvironmentCase):
             model = self.env["server.config"]
             model._add_columns()
             self.env.registry.setup_models(self.env.cr)
-        defaults = self._test_default(hidden_pwd=True)
+            defaults = self._test_default(hidden_pwd=True)
 
-        self.assertIn("odoo_I_admin_passwd", defaults)
-        self.assertIn("odoo_I_db_password", defaults)
-        self.assertIn("odoo_I_smtp_password", defaults)
-        self.assertIn("outgoing_mail_provider_promail_I_smtp_pass", defaults)
+            self.assertIn("odoo_I_admin_passwd", defaults)
+            self.assertIn("odoo_I_db_password", defaults)
+            self.assertIn("odoo_I_smtp_password", defaults)
+            self.assertIn("outgoing_mail_provider_promail_I_smtp_pass", defaults)
